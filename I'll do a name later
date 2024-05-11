@@ -1,6 +1,5 @@
-getgenv().Triton = {
+getgenv().Q1Red = {
     ['StartUP'] = {
-        Key = 'LuarmorKey', -- replace with luarmor key
         UWP_Optimize = false,
         UnlockFPS = false,
         Intro = false
@@ -166,11 +165,11 @@ getgenv().Triton = {
   
   local VirtualInputManager = game:GetService("VirtualInputManager")
     
-  if getgenv().Triton.StartUP.UnlockFPS then
+  if getgenv().Q1RED.StartUP.UnlockFPS then
       setfpscap(999)
   end
   
-  if getgenv().Triton.StartUP.UWP_Optimize then
+  if getgenv().Q1RED.StartUP.UWP_Optimize then
       VirtualInputManager:SendKeyEvent(true, "F9", 0, game) wait() VirtualInputManager:SendKeyEvent(false, "F9", 0, game)
   
       game.DescendantAdded:Connect(function(descendant)
@@ -210,7 +209,7 @@ getgenv().Triton = {
   getgenv().DOC                      = false
   
   local HHAAHAHAHHAHAHAHAHAHHAHAH    = game:GetService("RunService")
-  local AHAHAHAHHAAHAHAHAHA          = getgenv().Triton.CamLock.Smoothness.Smoothness
+  local AHAHAHAHHAAHAHAHAHA          = getgenv().Q1RED.CamLock.Smoothness.Smoothness
   local Players                      = game:GetService("Players")
   local AHAHAHAHAHAHHAHAHHA          = nil
   local AHAHAHAHAHAHAHAHAAA          = nil
@@ -251,10 +250,10 @@ getgenv().Triton = {
     if (not FKWPOAKFAPOAWKFPOFWKAFPOAWFK and not FWAKFAPFKWPAOFKAWFPAP) then
         return FKWPOAKFAPOAWKFPOFWKAFPOAWFK and FWAKFAPFKWPAOFKAWFPAP
     end
-    FWAKFAPFKWPAOFKAWFPAP.Visible            = getgenv().Triton.Fov.CamLock.Show
-    FWAKFAPFKWPAOFKAWFPAP.Radius             = getgenv().Triton.Fov.CamLock.Radius * 3
+    FWAKFAPFKWPAOFKAWFPAP.Visible            = getgenv().Q1RED.Fov.CamLock.Show
+    FWAKFAPFKWPAOFKAWFPAP.Radius             = getgenv().Q1RED.Fov.CamLock.Radius * 3
     FWAKFAPFKWPAOFKAWFPAP.Position           = Vector2.new(Mouse.X, Mouse.Y + (AHHAAHAHAHAHAHAAAAH:GetGuiInset().Y))
-    FKWPOAKFAPOAWKFPOFWKAFPOAWFK.Visible     = getgenv().Triton.Fov.SilentAim.Show
+    FKWPOAKFAPOAWKFPOFWKAFPOAWFK.Visible     = getgenv().Q1RED.Fov.SilentAim.Show
     FKWPOAKFAPOAWKFPOFWKAFPOAWFK.Position    = Vector2.new(Mouse.X, Mouse.Y + (AHHAAHAHAHAHAHAAAAH:GetGuiInset().Y))
     FKWPOAKFAPOAWKFPOFWKAFPOAWFK.Radius      = getgenv().Triton.Fov.SilentAim.Radius * 3
     return FKWPOAKFAPOAWKFPOFWKAFPOAWFK and FWAKFAPFKWPAOFKAWFPAP
@@ -382,7 +381,7 @@ getgenv().Triton = {
     end
   
     if
-        getgenv().Triton.Adjustment.Checks.Knocked_Check == true and FWAKOIIIIIIIIIIIfawfwafawf(Target) and
+        getgenv().Q1RED.Adjustment.Checks.Knocked_Check == true and FWAKOIIIIIIIIIIIfawfwafawf(Target) and
             Target.Character:FindFirstChild("BodyEffects")
      then
         local currentTime = tick()
@@ -408,7 +407,7 @@ getgenv().Triton = {
             return
         end
     end
-    if getgenv().Triton.Adjustment.Checks.Wall_Check == true and FWAKOIIIIIIIIIIIfawfwafawf(Target) then
+    if getgenv().Q1RED.Adjustment.Checks.Wall_Check == true and FWAKOIIIIIIIIIIIfawfwafawf(Target) then
         local currentTime = tick()
         local elapsedTime = currentTime - AHAHAHAHAHAHAHAHAHAH
         if elapsedTime >= HAHAAHAHAHAHAHHAAH then
@@ -420,7 +419,7 @@ getgenv().Triton = {
         end
     end
     if
-        getgenv().Triton.Adjustment.Checks.Crew_Check == true and FWAKOIIIIIIIIIIIfawfwafawf(Target) and
+        getgenv().Q1RED.Adjustment.Checks.Crew_Check == true and FWAKOIIIIIIIIIIIfawfwafawf(Target) and
             FWAKOIIIIIIIIIIIfawfwafawf(Client) and
             Target:FindFirstChild("DataFolder") and
             Target.DataFolder:FindFirstChild("Information") and
@@ -454,14 +453,14 @@ getgenv().Triton = {
   
     for _, v in pairs(Players:GetPlayers()) do
         if (v.Character and v ~= Client and v.Character:FindFirstChild("HumanoidRootPart")) then
-            if getgenv().Triton.Fov.CamLock.Use_Radius then
+            if getgenv().Q1RED.Fov.CamLock.Use_Radius then
                 local Position, OnScreen = Camera:WorldToScreenPoint(v.Character.HumanoidRootPart.Position)
                 local Distance = (Vector2.new(Position.X, Position.Y) - Vector2.new(Mouse.X, Mouse.Y)).Magnitude
                 if (FWAKFAPFKWPAOFKAWFPAP.Radius > Distance and Distance < Closest and OnScreen) then
                     Closest = Distance
                     Target = v
                 end
-            elseif getgenv().Triton.Adjustment.Checks.Wall_Check then
+            elseif getgenv().Q1RED.Adjustment.Checks.Wall_Check then
                 local Position, OnScreen = Camera:WorldToScreenPoint(v.Character.HumanoidRootPart.Position)
                 local Distance = (Vector2.new(Position.X, Position.Y) - Vector2.new(Mouse.X, Mouse.Y)).Magnitude
   
@@ -494,10 +493,10 @@ getgenv().Triton = {
         local Keybind = getgenv().Triton.CamLock.KeyBind.KeyBind:lower()
         if not t and (Key == Keybind) then
             if
-                getgenv().Triton.CamLock.Normal.Enabled  == true and
-                    getgenv().Triton.CamLock.KeyBind.Mode == "KeyBind"
+                getgenv().Q1RED.CamLock.Normal.Enabled  == true and
+                    getgenv().Q1RED.CamLock.KeyBind.Mode == "KeyBind"
              then
-                if getgenv().Triton.CamLock.KeyBind.Hold == true then
+                if getgenv().Q1RED.CamLock.KeyBind.Hold == true then
                     AHAHAHAHAAHAHAHAAH.MouseIconEnabled = true
                     AHAHAHAHAHHAHAHAHAHAHAAHHAHAHAHAHHAHAHAAHAHAHAHAHAHAHH = true
                     AHAHAHAHAHAHAHAHAAA = AHAHAHAHAHAHAHHAAHAHAHAH()
@@ -519,12 +518,12 @@ getgenv().Triton = {
   
   Mouse.KeyUp:Connect(
     function(Key, t)
-        local Keybind = getgenv().Triton.CamLock.KeyBind.KeyBind:lower()
+        local Keybind = getgenv().Q1RED.CamLock.KeyBind.KeyBind:lower()
         if not t and (Key == Keybind) then
             if
-                getgenv().Triton.CamLock.Normal.Enabled == true and
-                    getgenv().Triton.CamLock.KeyBind.Hold == true and
-                    getgenv().Triton.CamLock.KeyBind.Mode == "KeyBind"
+                getgenv().Q1RED.CamLock.Normal.Enabled == true and
+                    getgenv().Q1RED.CamLock.KeyBind.Hold == true and
+                    getgenv().Q1RED.CamLock.KeyBind.Mode == "KeyBind"
              then
                 AHAHAHAHAAHAHAHAAH.MouseIconEnabled = true
                 AHAHAHAHAHHAHAHAHAHAHAAHHAHAHAHAHHAHAHAAHAHAHAHAHAHAHH = false
@@ -536,12 +535,12 @@ getgenv().Triton = {
   
   AHAHAHAHAAHAHAHAAH.InputBegan:Connect(
     function(input, t)
-        if not t and input.UserInputType == getgenv().Triton.CamLock.KeyBind.MouseBind then
+        if not t and input.UserInputType == getgenv().Q1 RE ED.CamLock.KeyBind.MouseBind then
             if
-                getgenv().Triton.CamLock.Normal.Enabled == true and
-                    getgenv().Triton.CamLock.KeyBind.Mode == "Mouse"
+                getgenv().Q1RED.CamLock.Normal.Enabled == true and
+                    getgenv().Q1RED.CamLock.KeyBind.Mode == "Mouse"
              then
-                if getgenv().Triton.CamLock.KeyBind.Hold == true then
+                if getgenv().Q1RED.CamLock.KeyBind.Hold == true then
                     AHAHAHAHAAHAHAHAAH.MouseIconEnabled = true
                     AHAHAHAHAHHAHAHAHAHAHAAHHAHAHAHAHHAHAHAAHAHAHAHAHAHAHH = true
                     AHAHAHAHAHAHAHAHAAA = AHAHAHAHAHAHAHHAAHAHAHAH()
@@ -563,11 +562,11 @@ getgenv().Triton = {
   
   AHAHAHAHAAHAHAHAAH.InputEnded:Connect(
     function(input, t)
-        if not t and input.UserInputType == getgenv().Triton.CamLock.KeyBind.MouseBind then
+        if not t and input.UserInputType == getgenv().Q1RED.CamLock.KeyBind.MouseBind then
             if
-                getgenv().Triton.CamLock.Normal.Enabled == true and
-                    getgenv().Triton.CamLock.KeyBind.Hold == true and
-                    getgenv().Triton.CamLock.KeyBind.Mode == "Mouse"
+                getgenv().Q1RED.CamLock.Normal.Enabled == true and
+                    getgenv().Q1RED.CamLock.KeyBind.Hold == true and
+                    getgenv().Q1RED.CamLock.KeyBind.Mode == "Mouse"
              then
                 AHAHAHAHAAHAHAHAAH.MouseIconEnabled = true
                 AHAHAHAHAHHAHAHAHAHAHAAHHAHAHAHAHHAHAHAAHAHAHAHAHAHAHH = false
@@ -579,16 +578,16 @@ getgenv().Triton = {
   
   Mouse.KeyDown:Connect(
     function(Key, t)
-        local Keybind = getgenv().Triton.Silent.KeyBind.KeyBind:lower()
+        local Keybind = getgenv().Q1RED.Silent.KeyBind.KeyBind:lower()
         if not t then
-            if (Key == Keybind) and getgenv().Triton.Silent.KeyBind.Enabled == true then
-                if getgenv().Triton.Silent.Normal.Enabled == true then
-                    getgenv().Triton.Silent.Normal.Enabled = false
-                    if getgenv().Triton.Silent.KeyBind.Notification then
+            if (Key == Keybind) and getgenv().Q1RED.Silent.KeyBind.Enabled == true then
+                if getgenv().Q1RED.Silent.Normal.Enabled == true then
+                    getgenv().Q1RED.Silent.Normal.Enabled = false
+                    if getgenv().Q1RED.Silent.KeyBind.Notification then
                         game.StarterGui:SetCore(
                             "SendNotification",
                             {
-                                Title = "💰 Triton 💰",
+                                Title = "💰 Q1REDHUB 💰",
                                 Text = "Disabled",
                                 Icon = "",
                                 Duration = 1
@@ -596,12 +595,12 @@ getgenv().Triton = {
                         )
                     end
                 else
-                    getgenv().Triton.Silent.Normal.Enabled = true
-                    if getgenv().Triton.Silent.KeyBind.Notification then
+                    getgenv().Q1RED.Silent.Normal.Enabled = true
+                    if getgenv().Q1RED.Silent.KeyBind.Notification then
                         game.StarterGui:SetCore(
                             "SendNotification",
                             {
-                                Title = "💰 Triton 💰",
+                                Title = "💰 Q1REDHUB 💰",
                                 Text = "Enabled",
                                 Icon = "",
                                 Duration = 1
@@ -625,20 +624,20 @@ getgenv().Triton = {
         local TargetMov = Players[tostring(AHAHAHAHAHAHHAHAHHA)].Character.Humanoid.MoveDirection
   
         if
-                getgenv().Triton.Silent.HitPart.NearestPoint == true and
+                getgenv().Q1RED.Silent.HitPart.NearestPoint == true and
                 (AHAHAHAHAHAHHAHAHHA.Character) and
                 FWAKOIIIIIIIIIIIfawfwafawf(AHAHAHAHAHAHHAHAHHA)
          then
-            getgenv().Triton.Silent.HitPart.HitPart =
+            getgenv().Q1RED.Silent.HitPart.HitPart =
                 tostring(WOIPAPORIAWPRIWRPAOFJWOIA(AHAHAHAHAHAHHAHAHHA.Character))
             local ClosestPoint =
                 IGNAGOIAWGAWGAUDIHNADAI(
-                Players[tostring(AHAHAHAHAHAHHAHAHHA)].Character[Triton.Silent.HitPart.HitPart]
+                Players[tostring(AHAHAHAHAHAHHAHAHHA)].Character[Q1RED.Silent.HitPart.HitPart]
             )
             AHAHAHAHAHAAHAHAHAH = CFrame.new(ClosestPoint.X, ClosestPoint.Y, ClosestPoint.Z)
             TargetCF = AHAHAHAHAHAAHAHAHAH
         else
-            TargetCF = Players[tostring(AHAHAHAHAHAHHAHAHHA)].Character[Triton.Silent.HitPart.HitPart].CFrame
+            TargetCF = Players[tostring(AHAHAHAHAHAHHAHAHHA)].Character[Q1RED.Silent.HitPart.HitPart].CFrame
         end
   
         if getgenv().DD then
@@ -656,7 +655,7 @@ getgenv().Triton = {
         else
             AHAHAHAHAAHHAAHAHAHA = false
         end
-        if getgenv().Triton.Adjustment.Checks.NoGroundShots then
+        if getgenv().Q1RED.Adjustment.Checks.NoGroundShots then
             if TargetVel.Y < getgenv().WAGA then
                 AHAHHAAAHAHHAAHHAHA = true
             else
@@ -676,21 +675,21 @@ getgenv().Triton = {
         if TargetCF ~= nil then
             if AHAHAHAHAAHHAAHAHAHA then
                 local MoveDirection = TargetMov
-                SilentCFrame = TargetCF + (MoveDirection * getgenv().Triton.Silent.Prediction.Prediction * 16)
+                SilentCFrame = TargetCF + (MoveDirection * getgenv().Q1RED.Silent.Prediction.Prediction * 16)
             elseif DU then
                 SilentCFrame =
                     TargetCF +
-                    (Vector3.new(TargetVel.X, 0, TargetVel.Z) * getgenv().Triton.Silent.Prediction.Prediction)
+                    (Vector3.new(TargetVel.X, 0, TargetVel.Z) * getgenv().Q1RED.Silent.Prediction.Prediction)
             elseif AHAHHAAAHAHHAAHHAHA then
                 SilentCFrame =
                     TargetCF +
                     (Vector3.new(TargetVel.X, (TargetVel.Y * getgenv().AGV), TargetVel.Z) *
-                        getgenv().Triton.Silent.Prediction.Prediction)
-            elseif getgenv().Triton.Silent.Prediction.Enabled then
+                        getgenv().Q1RED.Silent.Prediction.Prediction)
+            elseif getgenv().Q1RED.Silent.Prediction.Enabled then
                 SilentCFrame =
                     TargetCF +
                     (Vector3.new(TargetVel.X, TargetVel.Y, TargetVel.Z) *
-                        getgenv().Triton.Silent.Prediction.Prediction)
+                        getgenv().Q1EED.Silent.Prediction.Prediction)
             else
                 SilentCFrame = TargetCF
             end
@@ -701,7 +700,7 @@ getgenv().Triton = {
   end
   
   local AHHAAHAHAHAHAHAHHAHAHHA = function()
-    if getgenv().Triton.Silent.Normal.Enabled then
+    if getgenv().Q1RED.Silent.Normal.Enabled then
         AHAHAHAHAHAHHAHAHHA = AHAHHAHAHHHHAHAHAHAHAHAAHH()
     end
     local target = AHAHAHAHAHAHHAHAHHA
@@ -765,10 +764,10 @@ getgenv().Triton = {
     function()
         if AHAHAHAHAHAHAHAHAAA then
             if
-                getgenv().Triton.CamLock.Normal.Enabled and (AHAHAHAHAHAHAHAHAAA.Character) and
-                getgenv().Triton.Silent.HitPart.NearestPoint
+                getgenv().Q1RED.CamLock.Normal.Enabled and (AHAHAHAHAHAHAHAHAAA.Character) and
+                getgenv().Q1RED.Silent.HitPart.NearestPoint
              then
-                getgenv().Triton.CamLock.HitPart.Part =
+                getgenv().Q1RED.CamLock.HitPart.Part =
                     tostring(WOIPAPORIAWPRIWRPAOFJWOIA(AHAHAHAHAHAHAHAHAAA.Character))
             end
         end
@@ -785,7 +784,7 @@ getgenv().Triton = {
         end
         if AHAHAHAHAHAHHAHAHHA then
             if FWAKOIIIIIIIIIIIfawfwafawf(AHAHAHAHAHAHHAHAHHA) then
-                if AHAHAHAHAHAHHAHAHHA.Character:FindFirstChild(getgenv().Triton.Silent.HitPart.HitPart) then
+                if AHAHAHAHAHAHHAHAHHA.Character:FindFirstChild(getgenv().Q1RED.Silent.HitPart.HitPart) then
                     if getgenv().DD == true then
                         if AHAHAHAHAHAHHAHAHHA.Character.HumanoidRootPart.Velocity.magnitude > getgenv().DV then
                             AHAHAHAHAAHHAAHAHAHA = true
@@ -807,7 +806,7 @@ getgenv().Triton = {
                             AHAHAHAHAAHHAAHAHAHA = false
                         end
                     end
-                    if getgenv().Triton.Adjustment.Checks.NoGroundShots == true then
+                    if getgenv().Q1RED.Adjustment.Checks.NoGroundShots == true then
                         if AHAHAHAHAHAHHAHAHHA.Character.HumanoidRootPart.Velocity.Y < getgenv().WAGA then
                             AHAHHAAAHAHHAAHHAHA = true
                         else
@@ -841,16 +840,16 @@ getgenv().Triton = {
             AHHAHAAHAHAHAHHAHAH = currentTime
         end
         if
-            getgenv().Triton.CamLock.Normal.Enabled == true and Client.Character and
+            getgenv().Q1RED.CamLock.Normal.Enabled == true and Client.Character and
                 Client.Character:FindFirstChildWhichIsA("Tool")
          then
             if AHAHAHAHAAHHAHAHAHAHAHHAHAHAAAH(AHAHAHAHAHAHAHAHAAA) then
                 if AHAHAHAHAHAHAHAHAAA then
                     if
-                        getgenv().Triton.CamLock.Normal.Enabled and (AHAHAHAHAHAHAHAHAAA.Character) and
+                        getgenv().Q1RED.CamLock.Normal.Enabled and (AHAHAHAHAHAHAHAHAAA.Character) and
                         getgenv().Triton.Silent.HitPart.NearestPoint
                      then
-                        getgenv().Triton.CamLock.HitPart.Part =
+                        getgenv().Q1RED.CamLock.HitPart.Part =
                             tostring(WOIPAPORIAWPRIWRPAOFJWOIA(AHAHAHAHAHAHAHAHAAA.Character))
                     end
                 end
@@ -899,7 +898,7 @@ getgenv().Triton = {
                 end
             end
             if
-                getgenv().Triton.CamLock.Normal.Enabled == true and Client.Character and
+                getgenv().Q1RED.CamLock.Normal.Enabled == true and Client.Character and
                     Client.Character:FindFirstChildWhichIsA("Tool")
              then
                 if
@@ -913,7 +912,7 @@ getgenv().Triton = {
                     end
                 end
                 if
-                    getgenv().Triton.Adjustment.Checks.Knocked_Check == true and AHAHAHAHAHAHAHAHAAA and
+                    getgenv().Q1RED.Adjustment.Checks.Knocked_Check == true and AHAHAHAHAHAHAHAHAAA and
                         AHAHAHAHAHAHAHAHAAA.Character and
                         AHAHAHAHAHAHAHAHAAA.Character:FindFirstChild("Humanoid") and
                         Client and
@@ -926,7 +925,7 @@ getgenv().Triton = {
                     end
                 end
                 if
-                    getgenv().Triton.Adjustment.Checks.Knocked_Check == true and AHAHAHAHAHAHAHAHAAA and
+                    getgenv().Q1RED.Adjustment.Checks.Knocked_Check == true and AHAHAHAHAHAHAHAHAAA and
                         AHAHAHAHAHAHAHAHAAA.Character
                  then
                     local KOd = AHAHAHAHAHAHAHAHAAA.Character:WaitForChild("BodyEffects")["K.O"].Value
@@ -956,21 +955,21 @@ getgenv().Triton = {
                         AHAHAHAHAHAHHAHAHAH and AHAHAHAHAHAHAHAHAAA and AHAHAHAHAHAHAHAHAAA.Character and
                             AHAHAHAHAHAHAHAHAAA.Character:FindFirstChild("Humanoid") and
                             AHAHAHAHAHAHAHAHAAA.Character:FindFirstChild(
-                                getgenv().Triton.CamLock.HitPart.Part
+                                getgenv().Q1RED.CamLock.HitPart.Part
                             ) and
-                            getgenv().Triton.CamLock.Prediction.Enabled == true
+                            getgenv().Q1RED.CamLock.Prediction.Enabled == true
                      then
                         local PlrMoveDirection = (AHAHAHAHAHAHAHAHAAA.Character.Humanoid.MoveDirection)
                         local Main =
                             CFrame.new(
                             Camera.CFrame.p,
-                            AHAHAHAHAHAHAHAHAAA.Character[getgenv().Triton.CamLock.HitPart.Part].Position +
-                                (PlrMoveDirection * getgenv().Triton.CamLock.Prediction.Prediction * 16)
+                            AHAHAHAHAHAHAHAHAAA.Character[getgenv().Q1RED.CamLock.HitPart.Part].Position +
+                                (PlrMoveDirection * getgenv().Q1RED.CamLock.Prediction.Prediction * 16)
                         )
                         Camera.CFrame =
                             Camera.CFrame:Lerp(
                             Main,
-                            getgenv().Triton.CamLock.Smoothness.Smoothness,
+                            getgenv().Q1RED.CamLock.Smoothness.Smoothness,
                             getgenv().FMS,
                             Enum.EasingDirection.InOut,
                             getgenv().SMS,
@@ -979,56 +978,56 @@ getgenv().Triton = {
                     elseif
                         AHAHAHAHAHAHAHAHAAH and AHAHAHAHAHAHAHAHAAA and AHAHAHAHAHAHAHAHAAA.Character and
                             AHAHAHAHAHAHAHAHAAA.Character:FindFirstChild(
-                                getgenv().Triton.CamLock.HitPart.Part
+                                getgenv().Q1RED.CamLock.HitPart.Part
                             ) and
-                            getgenv().Triton.CamLock.Prediction.Enabled == true
+                            getgenv().Q1RED.CamLock.Prediction.Enabled == true
                      then
                         local Main =
                             CFrame.new(
                             Camera.CFrame.p,
-                            AHAHAHAHAHAHAHAHAAA.Character[getgenv().Triton.CamLock.HitPart.Part].Position +
+                            AHAHAHAHAHAHAHAHAAA.Character[getgenv().Q1RED.CamLock.HitPart.Part].Position +
                                 (Vector3.new(
-                                    AHAHAHAHAHAHAHAHAAA.Character[getgenv().Triton.CamLock.HitPart.Part].Velocity.X,
+                                    AHAHAHAHAHAHAHAHAAA.Character[getgenv().Q1RED.CamLock.HitPart.Part].Velocity.X,
                                     0,
-                                    AHAHAHAHAHAHAHAHAAA.Character[getgenv().Triton.CamLock.HitPart.Part].Velocity.Z
+                                    AHAHAHAHAHAHAHAHAAA.Character[getgenv().Q1RED.CamLock.HitPart.Part].Velocity.Z
                                 ) *
-                                    getgenv().Triton.CamLock.Prediction.Prediction)
+                                    getgenv().Q1RED.CamLock.Prediction.Prediction)
                         )
                         Camera.CFrame =
                             Camera.CFrame:Lerp(
                             Main,
-                            getgenv().Triton.CamLock.Smoothness.Smoothness,
+                            getgenv().Q1RED.CamLock.Smoothness.Smoothness,
                             getgenv().FMS,
                             Enum.EasingDirection.InOut,
                             getgenv().SMS,
                             Enum.EasingDirection.Out
                         )
                     elseif
-                        getgenv().Triton.CamLock.Prediction.Enabled and AHAHAHAHAHAHAHAHAAA and
+                        getgenv().Q1RED.CamLock.Prediction.Enabled and AHAHAHAHAHAHAHAHAAA and
                             AHAHAHAHAHAHAHAHAAA.Character and
                             AHAHAHAHAHAHAHAHAAA.Character:FindFirstChild(
-                                getgenv().Triton.CamLock.HitPart.Part
+                                getgenv().Q1RED.CamLock.HitPart.Part
                             )
                      then
-                        if getgenv().Triton.CamLock.Shake.Enabled then
+                        if getgenv().Q1RED.CamLock.Shake.Enabled then
                             local Main =
                                 CFrame.new(
                                 Camera.CFrame.p,
-                                AHAHAHAHAHAHAHAHAAA.Character[getgenv().Triton.CamLock.HitPart.Part].Position +
-                                    AHAHAHAHAHAHAHAHAAA.Character[getgenv().Triton.CamLock.HitPart.Part].Velocity *
-                                        getgenv().Triton.CamLock.Prediction.Prediction +
+                                AHAHAHAHAHAHAHAHAAA.Character[getgenv().Q1RED.CamLock.HitPart.Part].Position +
+                                    AHAHAHAHAHAHAHAHAAA.Character[getgenv().Q1RED.CamLock.HitPart.Part].Velocity *
+                                        getgenv().Q1RED.CamLock.Prediction.Prediction +
                                     Vector3.new(
                                         math.random(
-                                            -getgenv().Triton.CamLock.Shake.DirectionX,
-                                            getgenv().Triton.CamLock.Shake.DirectionX
+                                            -getgenv().Q1RED.CamLock.Shake.DirectionX,
+                                            getgenv().Q1RED.CamLock.Shake.DirectionX
                                         ),
                                         math.random(
-                                            -getgenv().Triton.CamLock.Shake.DirectionY,
-                                            getgenv().Triton.CamLock.Shake.DirectionY
+                                            -getgenv().Q1RED.CamLock.Shake.DirectionY,
+                                            getgenv().Q1RED.CamLock.Shake.DirectionY
                                         ),
                                         math.random(
-                                            -getgenv().Triton.CamLock.Shake.DirectionZ,
-                                            getgenv().Triton.CamLock.Shake.DirectionZ
+                                            -getgenv().Q1RED.CamLock.Shake.DirectionZ,
+                                            getgenv().Q1RED.CamLock.Shake.DirectionZ
                                         )
                                     ) *
                                         0.1
@@ -1036,7 +1035,7 @@ getgenv().Triton = {
                             Camera.CFrame =
                                 Camera.CFrame:Lerp(
                                 Main,
-                                getgenv().Triton.CamLock.Smoothness.Smoothness,
+                                getgenv().Q1RED.CamLock.Smoothness.Smoothness,
                                 getgenv().FMS,
                                 Enum.EasingDirection.InOut,
                                 getgenv().SMS,
@@ -1046,14 +1045,14 @@ getgenv().Triton = {
                             local Main =
                                 CFrame.new(
                                 Camera.CFrame.p,
-                                AHAHAHAHAHAHAHAHAAA.Character[getgenv().Triton.CamLock.HitPart.Part].Position +
-                                    AHAHAHAHAHAHAHAHAAA.Character[getgenv().Triton.CamLock.HitPart.Part].Velocity *
-                                        getgenv().Triton.CamLock.Prediction.Prediction
+                                AHAHAHAHAHAHAHAHAAA.Character[getgenv().Q1RED.CamLock.HitPart.Part].Position +
+                                    AHAHAHAHAHAHAHAHAAA.Character[getgenv().Q1RED.CamLock.HitPart.Part].Velocity *
+                                        getgenv().Q1RED.CamLock.Prediction.Prediction
                             )
                             Camera.CFrame =
                                 Camera.CFrame:Lerp(
                                 Main,
-                                getgenv().Triton.CamLock.Smoothness.Smoothness,
+                                getgenv().Q1RED.CamLock.Smoothness.Smoothness,
                                 getgenv().FMS,
                                 Enum.EasingDirection.InOut,
                                 getgenv().SMS,
@@ -1061,28 +1060,28 @@ getgenv().Triton = {
                             )
                         end
                     elseif
-                        getgenv().Triton.CamLock.Prediction.Enabled == false and AHAHAHAHAHAHAHAHAAA and
+                        getgenv().Q1RED.CamLock.Prediction.Enabled == false and AHAHAHAHAHAHAHAHAAA and
                             AHAHAHAHAHAHAHAHAAA.Character and
                             AHAHAHAHAHAHAHAHAAA.Character:FindFirstChild(
-                                getgenv().Triton.CamLock.HitPart.Part
+                                getgenv().Q1RED.CamLock.HitPart.Part
                             )
                      then
-                        if getgenv().Triton.CamLock.Shake.Enabled then
+                        if getgenv().Q1RED.CamLock.Shake.Enabled then
                             local Main =
                                 CFrame.new(
                                 Camera.CFrame.p,
-                                AHAHAHAHAHAHAHAHAAA.Character[getgenv().Triton.CamLock.HitPart.Part].Position +
+                                AHAHAHAHAHAHAHAHAAA.Character[getgenv().Q1RED.CamLock.HitPart.Part].Position +
                                     Vector3.new(
                                         math.random(
-                                            -getgenv().Triton.CamLock.Shake.DirectionX,
-                                            getgenv().Triton.CamLock.Shake.DirectionX
+                                            -getgenv().Q1RED.CamLock.Shake.DirectionX,
+                                            getgenv().Q1RED.CamLock.Shake.DirectionX
                                         ),
                                         math.random(
-                                            -getgenv().Triton.CamLock.Shake.DirectionY,
-                                            getgenv().Triton.CamLock.Shake.DirectionY
+                                            -getgenv().Q1RED.CamLock.Shake.DirectionY,
+                                            getgenv().Q1RED.CamLock.Shake.DirectionY
                                         ),
                                         math.random(
-                                            -getgenv().Triton.CamLock.Shake.DirectionZ,
+                                            -getgenv().Q1RED.CamLock.Shake.DirectionZ,
                                             getgenv().Triton.CamLock.Shake.DirectionZ
                                         )
                                     ) *
@@ -1338,7 +1337,7 @@ getgenv().Triton = {
                         game.StarterGui:SetCore(
                             "SendNotification",
                             {
-                                Title = "💰 Triton 💰",
+                                Title = "💰 Q1REDHUB 💰",
                                 Text = " Disabled TriggerBot ",
                                 Icon = "",
                                 Duration = 1
@@ -1351,7 +1350,7 @@ getgenv().Triton = {
                         game.StarterGui:SetCore(
                             "SendNotification",
                             {
-                                Title = "💰 Triton 💰",
+                                Title = "💰 Q1REDHUB 💰",
                                 Text = " Enabled TriggerBot ",
                                 Icon = "",
                                 Duration = 1
@@ -1625,13 +1624,13 @@ getgenv().Triton = {
       if keybind.KeyCode == Enum.KeyCode.J and processed == false then
           if Toggle == false then
                      game.StarterGui:SetCore("SendNotification", {
-                  Title = "😎Triton anti on😎",
+                  Title = "😎Q1REDHUB anti on😎",
                   Text = "Enabled"
               })
               Toggle = true
           elseif Toggle == true then
                      game.StarterGui:SetCore("SendNotification", {
-                  Title = "😎Triton anti off😎",
+                  Title = "😎Q1REDHUB anti off😎",
                   Text = "Disabled"
               })
               Toggle = false
@@ -1650,6 +1649,6 @@ getgenv().Triton = {
   end)
   
            game.StarterGui:SetCore("SendNotification", {
-                  Title = "😎Triton anti😎",
+                  Title = "😎Q1REDHUB ANTI😎",
                   Text = "Loaded"
               })
