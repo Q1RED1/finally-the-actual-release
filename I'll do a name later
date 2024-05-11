@@ -1,4 +1,4 @@
-getgenv().Q1Red = {
+getgenv().Q1RED = {
     ['StartUP'] = {
         UWP_Optimize = false,
         UnlockFPS = false,
